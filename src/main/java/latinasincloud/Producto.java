@@ -20,24 +20,30 @@ public class Producto {
     public int getId() {
         return id;
     }
+
     public String getNombre() {
         return nombre;
     }
-    public int getPrecio() {
+
+    public double getPrecio() {
         return precio;
     }
+
     public int getStock() {
         return stock;
     }
 
-    public void vender(int cantidad){
-        if (cantidad <= this.stock){
-            this.stock -= cantidad;
+    public void vender(int cantidad) {
+        if (cantidad <= stock) {
+            stock -= cantidad;
             int precioTotal = this.precio * cantidad;
             System.out.println("Venta realizada por $" + precioTotal);
-        }
-        else{
+        } else {
             System.out.println("No hay suficiente stock para vender");
         }
+    }
+
+    public void mostrar() {
+        System.out.println("ID:" + id + "| Producto: " + nombre + "| Precio: $" + precio + "| Stock: " + stock);
     }
 }
